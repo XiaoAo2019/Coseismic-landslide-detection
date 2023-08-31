@@ -62,7 +62,7 @@ class GRID:
 def detect_image(image):
 
     classes = 1                                                                                                         # 类别数
-    weights_path = r"H:\BIGS\Video\培训数据和代码\code\Unet_Resnet\ResUnet_save_weights\ep100-loss0.070-val_loss0.150.pth"           # 权重路径
+    weights_path = r"H:\code\Unet_Resnet\ResUnet_save_weights\ep100-loss0.070-val_loss0.150.pth"                        # 权重路径
     assert os.path.exists(weights_path), f"weights {weights_path} not found."
 
     # get devices
@@ -113,8 +113,8 @@ def detect_image(image):
 
 def main():
 
-    IMAGE_DIR = r'H:\BIGS\Video\培训数据和代码\data\test\1/'                                                       # 图像文件夹
-    path_out = r"H:\BIGS\Video\培训数据和代码\data\test\2/"                                                                  # 输出文件夹
+    IMAGE_DIR = r'H:\data\test\1/'                                                                                      # 图像文件夹
+    path_out = r"H:\data\test\2/"                                                                                       # 输出文件夹
 
     run = GRID()
     count = os.listdir(IMAGE_DIR)

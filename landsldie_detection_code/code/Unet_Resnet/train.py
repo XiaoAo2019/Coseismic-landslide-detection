@@ -117,7 +117,7 @@ def main(args):
 def parse_args():
     import argparse
     parser = argparse.ArgumentParser(description="pytorch training")
-    parser.add_argument("--data-path", default=r"F:\BIGS\Video\培训数据和代码\code\Unet_Resnet\data/", help="VOCdevkit root") # 数据集路径
+    parser.add_argument("--data-path", default=r"F:\code\Unet_Resnet\data/", help="VOCdevkit root")                     # 数据集路径
     parser.add_argument("--num-classes", default=1, type=int)                                                           # 类别数；不包含背景
     parser.add_argument("--device", default="cuda", help="training device")                                             # 默认使用GPU
     parser.add_argument("-b", "--batch-size", default=2, type=int)                                                      # batch_size
