@@ -42,8 +42,8 @@ class Rotate(object):
 
 
 if __name__ == '__main__':
-    path_in_img = r"F:\BIGS\Video\培训数据和代码\data\train\1_挑选的样本/"                                                                # 输入Images路径
-    path_in_mask = r"F:\BIGS\Video\培训数据和代码\data\train\3_标签图像mask/"                                                             # 输出Masks路径
+    path_in_img = r"F:\data\train\1_挑选的样本/"                                                                          # 输入Images路径
+    path_in_mask = r"F:\data\train\3_标签图像mask/"                                                                       # 输出Masks路径
 
     file_in_img = os.listdir(path_in_img)
     file_in_mask = os.listdir(path_in_mask)
@@ -78,5 +78,5 @@ if __name__ == '__main__':
 
             img, target = transforms(img, target)
 
-            img.save(r"F:\BIGS\Video\培训数据和代码\data\train\61/{}_{}.tif".format('aug_', str(m)))                                      # 扩增Images保存路径
-            target.save(r"F:\BIGS\Video\培训数据和代码\data\train\62/{}_{}.png".format('aug_', str(m)))                                   # 扩增Masks保存路径
+            img.save(r"F:\data\train\61/{}_{}.tif".format('aug_', str(m)))                                              # 扩增Images保存路径
+            target.save(r"F:\data\train\62/{}_{}.png".format('aug_', str(m)))                                           # 扩增Masks保存路径

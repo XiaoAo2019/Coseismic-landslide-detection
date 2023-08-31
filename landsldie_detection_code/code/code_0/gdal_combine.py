@@ -57,8 +57,8 @@ def RasterMosaic(file_list, outpath):
 
 
 if __name__ == '__main__':
-    image_path = r"H:\BIGS\Video\培训数据和代码\data\test\2"                                                                 # 待拼接图片路径
-    result_path = r"H:\BIGS\Video\培训数据和代码\data\test\3"                                                                   # 拼接结果路径
+    image_path = r"H:\data\test\2"                                                                                      # 待拼接图片路径
+    result_path = r"H:\test\3"                                                                                          # 拼接结果路径
     imageList = glob.glob(image_path + "/*.tif")
     result = os.path.join(result_path, "result1.tif")
     RasterMosaic(imageList, result)

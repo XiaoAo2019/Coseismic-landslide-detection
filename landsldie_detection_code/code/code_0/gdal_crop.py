@@ -53,8 +53,8 @@ class GRID:
 
 if __name__ == '__main__':
 
-    path_img = r"H:\BIGS\Video\培训数据和代码\data\test\0_测试影像/test.tif"                                                                  # 输入图像路径
-    path_out = r"H:\BIGS\Video\培训数据和代码\data\test\1/"                                                                   # 输出图像文件夹路径
+    path_img = r"H:\data\test\0_测试影像/test.tif"                                                                        # 输入图像路径
+    path_out = r"H:\data\test\1/"                                                                                       # 输出图像文件夹路径
 
     t_start = time.time()
 
