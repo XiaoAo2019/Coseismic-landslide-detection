@@ -1,0 +1,33 @@
+1.              安装anaconda软件
+                 安装pycharm软件
+
+2. 安装pytorch (CPU版)
+
+打开Anaconda Prompt
+创建虚拟环境+安装python 输入命令：conda create -n pytorch_cpu python=3.8
+激活虚拟环境             输入命令：conda activate pytorch_cpu
+安装pytorch 选择合适的命令
+https://pytorch.org/get-started/previous-versions/
+例如输入命令：conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cpuonly -c pytorch
+
+3.	安装其它重要库
+
+输入命令：conda install gdal
+输入命令：conda install matplotlib
+输入命令：conda install scipy
+输入命令：conda install tqdm
+
+
+4.	安装labelme软件
+
+打开Anaconda Prompt
+输入命令: pip install labelme==3.16.7
+安装完成后，输入: labelme，可以打开软件
+
+
+其他常用命令：
+查看环境 输入：activate pytorch
+切回主环境 输入：activate root
+查看所有虚拟环境 输入：conda info --env
+查看所有库 输入：conda list
+
