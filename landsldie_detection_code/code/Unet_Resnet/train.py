@@ -117,7 +117,7 @@ def main(args):
 def parse_args():
     import argparse
     parser = argparse.ArgumentParser(description="pytorch training")
-    parser.add_argument("--data-path", default=r"F:\code\Unet_Resnet\data/", help="VOCdevkit root")                     # 数据集路径
+    parser.add_argument("--data-path", default=r"E:\Github\Coseismic-landslide-detection\landsldie_detection_code\code\Unet_Resnet\data/", help="VOCdevkit root")                     # 数据集路径
     parser.add_argument("--num-classes", default=1, type=int)                                                           # 类别数；不包含背景
     parser.add_argument("--device", default="cuda", help="training device")                                             # 默认使用GPU
     parser.add_argument("-b", "--batch-size", default=2, type=int)                                                      # batch_size
@@ -126,7 +126,7 @@ def parse_args():
 
     parser.add_argument('--lr', default=0.0001, type=float, help='initial learning rate')                               # 超参数；学习率
     parser.add_argument('--print-freq', default=1, type=int, help='print frequency')                                    # 打印频率
-    parser.add_argument("--amp", default=True, type=bool,                                                               # 使用混合精度训练
+    parser.add_argument("--amp", default=True, type=bool,                                                               # 使用混合精度训练，较老显卡（如10系列）不支持，需要改为False
                         help="Use torch.cud"
                              "a.amp for mixed precision training")
     args = parser.parse_args()
