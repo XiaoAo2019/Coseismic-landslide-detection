@@ -21,6 +21,7 @@ class RandomFlip(object):
 
     def __call__(self, image, target):
         if random.random() < self.flip_prob:
+            image = F.hflip(image)
             target = F.hflip(target)
         if random.random() < self.flip_prob:
             image = F.vflip(image)
@@ -42,16 +43,16 @@ class Rotate(object):
 
 
 if __name__ == '__main__':
-    path_in_img = r"F:\data\train\1_挑选的样本/"                                                                          # 输入Images路径
-    path_in_mask = r"F:\data\train\3_标签图像mask/"                                                                       # 输出Masks路径
+    path_in_img = r"D:\断层数据\PNG Patch/"                                                                          # 输入Images路径
+    path_in_mask = r"D:\断层数据\Label_Mask3/"                                                                       # 输出Masks路径
 
     file_in_img = os.listdir(path_in_img)
     file_in_mask = os.listdir(path_in_mask)
     num_file_in = len(file_in_img)
-    file_in_img.sort(key=lambda x: int(x[0:-4]))                                                                        # 控制顺序，按实际情况修改
-    file_in_mask.sort(key=lambda x: int(x[0:-4]))
+    file_in_img.sort(key=lambda x: int(x[7:-5]))                                                                        # 控制顺序，按实际情况修改
+    file_in_mask.sort(key=lambda x: int(x[7:-5]))
 
-    m = 0                                                                                                               # 图像序号
+    m = 345                                                                                                               # 图像序号
 
     rotate_prob = 1                                                                                                     # 设置旋转概率
     flip_prob = 0.5                                                                                                     # 翻转概率
@@ -59,7 +60,7 @@ if __name__ == '__main__':
     randomFlip = RandomFlip(rotate_prob)
     rotate = Rotate(flip_prob)
 
-    for j in range(0, 5):                                                                                               # 设置扩增的次数
+    for j in range(0, 3):                                                                                               # 设置扩增的次数
         for i in range(0, num_file_in):
 
             m +=1
@@ -78,5 +79,5 @@ if __name__ == '__main__':
 
             img, target = transforms(img, target)
 
-            img.save(r"F:\data\train\61/{}_{}.tif".format('aug_', str(m)))                                              # 扩增Images保存路径
-            target.save(r"F:\data\train\62/{}_{}.png".format('aug_', str(m)))                                           # 扩增Masks保存路径
+            img.save(r"D:\断层数据\aug_pic/{}_{}.png".format('aug', str(m)))                                              # 扩增Images保存路径
+            target.save(r"D:\断层数据\aug_mask/{}_{}.png".format('aug', str(m)))                                           # 扩增Masks保存路径
